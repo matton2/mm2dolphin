@@ -72,7 +72,7 @@ function App() {
         console.log(csv)
         // Assuming each row is a single column like: "Event Name"
         const parsedData = csv.data.map((row) => {
-            return { event_number: `${row[18]}${row[19]}`, event: row[20], heats: row[21], splits:0, round: 'F' };
+            return { event_number: `${row[18]}${row[19]}`, event: row[20], heats: row[21], splits:1, round: 'F' };
         });
 
         setMMData(parsedData);
@@ -88,7 +88,7 @@ function App() {
 	quoteChar: '"',
 	escapeChar: '"',
 	delimiter: ",",
-	header: true,
+	header: false,
 	newline: "\r\n",
 	skipEmptyLines: false, //other option is 'greedy', meaning skip delimiters, quotes, and whitespace.
 })
